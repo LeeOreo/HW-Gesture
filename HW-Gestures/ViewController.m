@@ -24,4 +24,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)rotationGesture:(id)sender {
+    UIRotationGestureRecognizer *rotationGesture = (UIRotationGestureRecognizer *)sender;
+    rotationGesture.view.transform = CGAffineTransformMakeRotation(rotationGesture.rotation);
+}
+
+
+- (IBAction)scaleGesture:(UIPinchGestureRecognizer *)sender{
+    sender.view.transform = CGAffineTransformScale(sender.view.transform, sender.scale, sender.scale);
+    sender.scale = 1;
+}
+
 @end
